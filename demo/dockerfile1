@@ -1,0 +1,10 @@
+#first choose base image 
+FROM ubuntu
+LABEL name=akash
+LABEL email=aakash@gmail.com
+LABEL colour=red
+#run cmd in shell
+RUN apt update ; apt install ncal -y
+RUN mkdir hello hello1 hello2
+#when create container using this image 
+CMD bash
