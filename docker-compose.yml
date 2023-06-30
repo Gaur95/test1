@@ -1,0 +1,31 @@
+version: '3.3'
+services:
+  web:
+    image: httpd
+    container_name: ak
+    ports:
+      - "1122:80"
+    volumes:
+      - /home/akash/Desktop/:/usr/local/apache2/htdocs/
+    networks:
+      - myxyz
+  myweb:
+    build: /home/akash/Desktop/test1/apache/
+    image: mycomposeimg
+    container_name: ak11
+    ports:
+      - "1133:80"
+    volumes:
+      - ./apache/:/var/www/html/
+  mydb:
+    image: mysql
+    container_name: mydb_c
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+    networks:
+      - myxyz
+networks:
+  myxyz:
+    external: true
+ 
+  
