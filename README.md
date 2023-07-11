@@ -135,7 +135,6 @@ vim index.html
  1012  docker volume --help
  1013  docker volume prune
  1014  docker volume ls
- 1015  history 
 ```
 # portainer
 ```
