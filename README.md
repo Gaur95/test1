@@ -23,3 +23,19 @@
   655  kubectl run ak --image httpd --port 80 --dry-run=client -o yaml >pod1.yml
   656  ls
 ```
+## PV AND PVC
+```
+akash@sky:~/Desktop/test1$ kubectl get pv
+NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+mypv   1Gi        RWO            Recycle          Available           standard                4m21s
+akash@sky:~/Desktop/test1$ kubectl apply -f pvc.yml 
+persistentvolumeclaim/mypvc created
+akash@sky:~/Desktop/test1$ kubectl get pv
+NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM           STORAGECLASS   REASON   AGE
+mypv   1Gi        RWO            Recycle          Bound    default/mypvc   standard                4m39s
+akash@sky:~/Desktop/test1$ kubectl get pvc
+NAME    STATUS   VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+mypvc   Bound    mypv     1Gi        RWO            standard       26s
+akash@sky:~/Desktop/test1$ ^C
+akash@sky:~/Desktop/test1$ 
+```
