@@ -3,12 +3,12 @@ kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: ak
-  name: ak
+    run: xyz
+  name: xyz
 spec:
   containers:
-  - image: httpd
-    name: ak
+  - image: nginx
+    name: xyz
     ports:
     - containerPort: 80
     resources: {}
