@@ -1,8 +1,3 @@
-# provider "aws" {
-#   access_key = "***********"
-#   secret_key = "****************"
-#   region = "ap-south-1"
-# }
 # resource "aws_instance" "akec2" {
 #     ami = "ami-08e5424edfe926b43"
 #     instance_type = "t2.micro"
@@ -10,12 +5,10 @@
 #     tags = {
 #       "Name" = "terraform"
 #     }
+#     count = 3
       
-#   provisioner "remote-exec" {
-#   inline = [
-#   "mkdir hello",
-#   "date >>time.txt"
-# ]
+#   provisioner "local-exec" {
+#  command = "echo ${self.public_ip} >> public_ip.txt"
 #   }
 #   connection {
 #     type = "ssh"
