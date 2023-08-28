@@ -11,16 +11,4 @@
 #       "Name" = "terraform"
 #     }
       
-#   provisioner "remote-exec" {
-#   inline = [
-#   "mkdir hello",
-#   "date >>time.txt"
-# ]
-#   }
-#   connection {
-#     type = "ssh"
-#     user = "ubuntu"
-#     private_key = file("/home/akash/Downloads/devopskey.pem")
-#     host = self.public_ip  #auto detect public ip of instance
-#   }
 # }
